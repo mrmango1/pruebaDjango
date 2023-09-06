@@ -1,9 +1,8 @@
-
 {% extends 'core/base.html' %}
+     
+    <title>{% block title %}{% endblock  %} | Inicio </title>
+    {% load static %}
 
-{% block title %}Inicio{% endblock %}
-
-{% load static %}
 {% block content %}
     <!-- Cabecera -->
     <section class="page-section clearfix">
@@ -18,7 +17,7 @@
             <p class="mb-3">Trabajamos sólo con los mejores ingredientes. Una vez lo pruebes, nuestro café será la mejor forma de empezar tu rutina diaria.
             </p>
             <div class="intro-button mx-auto">
-              <a class="btn btn-primary btn-xl" href="{% url 'store' %}">Visítanos</a>
+              <a class="btn btn-primary btn-xl" href="store.html">Visítanos</a>
             </div>
           </div>
         </div>
@@ -42,4 +41,7 @@
       </div>
     </section>
 
-{%endblock%}
+
+{% endblock  %}
+
+    

@@ -1,5 +1,5 @@
 """
-URL configuration for webEmpresa project.
+URL configuration for webempresa project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,8 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+
 
 urlpatterns = [
     path('', include('core.urls')),
-    path("admin/", admin.site.urls),
+    path('services/', include('services.urls')),
+    path('blog/', include('blog.urls')),
+    path('page/', include('pages.urls')),
+    path('contact/', include('contact.urls')),
+    path('admin/', admin.site.urls),
+    
 ]
+
+# configuracion extendidad para visulizar l amiltumedia
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
